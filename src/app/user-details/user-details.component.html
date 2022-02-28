@@ -1,0 +1,60 @@
+<app-success-messages [messages]="messages"></app-success-messages>
+<h2>{{ user.name }} Details</h2>
+<form class="col col-lg-10" [formGroup]="userDetailsForm">
+  <app-validation [errors]="errors"></app-validation>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name"
+           required name="name" formControlName="name" [maxlength]="50" >
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="text" class="form-control" id="email"
+           required name="email" formControlName="email"  [maxlength]="70">
+  </div>
+  <div *ngIf="!(user.receiver === null)" class="form-group">
+    <div class="input-bar">
+      <div class="input-bar-item">
+        <label for="receiver">Gift receiver</label>
+        <form>
+          <div class="form-group">
+            <input readonly type="receiver" class="form-control" id="receiver"
+                   name="receiver" value="{{user.receiver.name}}">
+          </div>
+        </form>
+      </div>
+      <div class="input-bar-item input-bar-item-btn">
+        <a class="icon"  (click)="showConfirmDeleteReceiver()" >
+          <span class="glyphicon glyphicon glyphicon-trash" style="color: crimson"></span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="uniqueId">Unique Id</label>
+    <input readonly type="text" class="form-control" id="uniqueId"
+           name="uniqueId" value="{{user.uniqueId}}">
+  </div>
+
+
+  <div class="form-group">
+    <label class="checkbox-inline">
+      <input type="checkbox" name="favoriteColors" formControlName="isActive" style=" font-weight:bold;"  ><b>Active</b>
+    </label>
+  </div>
+
+  <div class="buttons">
+  <button type="button"  class="btn btn-secondary" routerLink="/users">Close</button>
+  <button type="button" class="btn btn-primary" style="float: right;margin-left:1%;"  (click)="showConfirmSave()">Save
+    changes
+  </button>
+    <a class="icon" (click)="showConfirmSendMail()" >
+      <span class="glyphicon glyphicon-envelope"></span>
+    </a>
+    <a class="icon"  (click)="showConfirmDelete()" >
+      <span class="glyphicon glyphicon glyphicon-trash" style="color: crimson"></span>
+    </a>
+  </div>
+</form>
+
+

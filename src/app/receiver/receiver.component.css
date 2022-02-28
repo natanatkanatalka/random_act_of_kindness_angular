@@ -1,0 +1,150 @@
+body {
+    background-color: #F5F5F5 !important;
+    color: #212529;
+}
+
+.container-full {
+    position: relative;
+    min-height: 664px;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    background-color: #F5F5F5 !important;
+    color: #212529;
+    font-size: 14px;
+}
+
+.container {
+    background-color: #F5F5F5;
+    background: url('../../assets/back1.png');
+    background-position: 50% 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bg-boy {
+    width: 100%;
+    background: url('../../assets/boy-only.png');
+    background-position: 50% 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 200px;
+
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+
+
+}
+
+.bottom-text {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    color: #9E9E9E;
+
+}
+
+
+.main-text {
+    padding: 42px 5px 5px;
+    font-size: 24px;
+
+}
+
+.user {
+    width: 100%;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 37px;
+}
+
+.user img {
+    border-radius: 50%;
+    /* width:26%;
+    height:48%; */
+    width: 250px;
+    height: 250px;
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center 10%;
+}
+
+
+.main-text {
+  width: 100%;
+}
+
+.text-popup {
+
+    height: 140px;
+
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+@media only screen  and (max-width: 600px) {
+
+    .container-full {
+        background-size: cover;
+    }
+
+    /* .user img {
+        width: 300px;
+        height: auto; 300px;
+    } */
+
+    .main-text {
+        font-size: 16px;
+    }
+
+    .bg-boy {
+        height: 180px;
+        min-height: 200px
+    }
+
+    .bottom-text {
+        bottom: 10px;
+        padding: 5px;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .bg-boy {
+        height: 300px;
+    }
+
+    .text-popup {
+        background: url('../../assets/talk.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+
+        width: 300px;
+        height: 140px;
+
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+
+@media only screen and (min-width: 1000px) {
+    .text-popup {
+        margin-left: 120px;
+        margin-top: -80px;
+    }
+}
+
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    .text-popup {
+        margin-left: 80px;
+        margin-top: -20px;
+    }
+}

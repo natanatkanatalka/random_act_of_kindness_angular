@@ -1,0 +1,38 @@
+<div>
+  <app-success-messages [messages]="messages"></app-success-messages>
+  <h1>
+    Users
+  </h1>
+    <label>Search: <input type="text" style="width: 500px" [(ngModel)]="queryString"></label>
+<br>
+
+  <br>
+    <div class="col col-6">
+      <table id="users" class="users table table-hover">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Gift receiver</th>
+          <th>Unique Id</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let i= index;let user of (users| filter: queryString)" [routerLink]="['/users', user.id]">
+          <td width="5%">{{i+1}}</td>
+          <td width="15%">{{ user.name}}</td>
+          <td width="20%">{{ user.email }}</td>
+          <td width="15%" *ngIf="user.isActive">Active</td>
+          <td width="5%" *ngIf="!user.isActive">Inactive</td>
+          <td width="15%" *ngIf="user.receiver">{{ user.receiver.name }}</td>
+          <td width="15%" *ngIf="!user.receiver"></td>
+          <td width="30%">{{ user.uniqueId }}</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<!--<app-new-user [showCreateUser]="showCreateUser"></app-new-user>-->
+<!--<app-user-details [user]="selectedUser"></app-user-details>-->

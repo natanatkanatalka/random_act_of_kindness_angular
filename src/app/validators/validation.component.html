@@ -1,0 +1,9 @@
+<!--<div *ngIf="name.invalid && (name.dirty || name.touched) "-->
+<!--class="alert alert-danger">-->
+
+<div *ngIf="errors" class="alert alert-danger">
+  <div id="hideMe" *ngFor="let error of errors">
+    {{error}}
+  </div>
+</div>
+<!--</div>-->
